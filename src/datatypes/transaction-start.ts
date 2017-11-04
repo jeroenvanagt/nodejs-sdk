@@ -72,6 +72,12 @@ export class TransactionStart {
      * The description of the transaction.
      */
     description?: string;
+
+    /**
+     * The number belonging to the order
+     */
+    orderNumber?: string;
+
     /**
      * Set to true if you want to do a sandbox transaction
      */
@@ -165,6 +171,7 @@ export class TransactionStartClass extends TransactionStart {
         if (this.expireDate) data['transaction']['expireDate'] = this.formatDateTime(this.expireDate);
         if (this.exchangeUrl) data['transaction']['orderExchangeUrl'] = this.exchangeUrl;
         if (this.description) data['transaction']['description'] = this.description;
+        if (this.orderNumber) data['transaction']['orderNumber'] = this.orderNumber;
     
         data['statsData'] = {};
         if (this.extra1) data['statsData']['extra1'] = this.extra1;
